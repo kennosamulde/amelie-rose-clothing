@@ -18,6 +18,10 @@
     }
   }
 
+  &:first-child {
+    margin-top: 0;
+  }
+
   &:first-child,
   &:nth-child(4) {
     max-width: 100%;
@@ -49,16 +53,19 @@
     background-color: black;
 
     .title {
-      font-weight: bold;
+      font-weight: 500;
       margin-bottom: 6px;
-      font-size: 30px;
+      font-size: 20px;
       color: #ffffff;
+      text-transform: uppercase;
+      font-family: "Vollkorn";
     }
 
     span {
       font-weight: lighter;
-      font-size: 16px;
+      font-size: 14px;
       color: rgb(131, 131, 131);
+      letter-spacing: 0.5px;
     }
   }
 }
