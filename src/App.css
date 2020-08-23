@@ -14,9 +14,6 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  position: relative;
-  height: 100%;
-  width: 100%;
 }
 
 a {
@@ -24,5 +21,8 @@ a {
 }
 
 .App > * {
+  position: relative;
   padding: 100px;
+  height: 100%;
+  width: 100%;
 }
