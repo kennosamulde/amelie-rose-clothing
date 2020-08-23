@@ -9,9 +9,9 @@
   padding: 0 80px;
 
   .logo {
-    font-size: 22px;
+    font-size: 30px;
     color: rgb(0, 0, 0);
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
     font-family: "Vollkorn", serif;
   }
@@ -30,6 +30,11 @@
         margin-right: 30px;
       }
       color: rgb(0, 0, 0);
+      cursor: pointer;
     }
   }
+}
+
+.fixed {
+  background-color: white;
 }
