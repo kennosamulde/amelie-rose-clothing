@@ -7,6 +7,12 @@
   position: fixed;
   z-index: 3000;
   padding: 0 5vw;
+  background-color: transparent;
+  transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+
+  &.scrolled {
+    background-color: white;
+  }
 
   .logo {
     font-size: 30px;

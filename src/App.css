@@ -20,9 +20,6 @@ a {
   text-decoration: none;
 }
 
-.App > * {
+.App {
   position: relative;
-  padding: 100px;
-  height: 100%;
-  width: 100%;
 }
