@@ -1,11 +1,14 @@
 import React, { useState } from "react"
 import "./header.styles.scss"
 import { Link } from "react-router-dom"
-import { auth } from "../../firebase/firebase.utils"
 // lets our component have access to reducers/redux
 import { connect } from "react-redux"
 
-const Header = ({ currentUser }) => {
+import { auth } from "../../firebase/firebase.utils"
+import CartIcon from "../cart-icon/cart-icon.component"
+import CartDropdown from "../cart-dropdown/cart-dropdown.component"
+
+const Header = ({ currentUser, hidden }) => {
   const [header, setHeader] = useState(false)
 
   const changeBackground = () => {
@@ -41,14 +44,17 @@ const Header = ({ currentUser }) => {
             SIGN IN
           </Link>
         )}
+        <CartIcon />
       </div>
+      {hidden ? null : <CartDropdown />}
     </div>
   )
 }
 
 // allows us to access the state being our root-reducer
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 })
 
 // connects our reducers/state to this component
