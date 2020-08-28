@@ -1,14 +1,14 @@
 .collection-preview {
   display: flex;
   flex-direction: column;
-  padding: 0 15vw;
+  padding: 0 10vw;
 
   .title {
-    font-size: 25px;
+    font-size: 18px;
     margin-bottom: 10vh;
     color: rgb(0, 0, 0);
-    font-weight: 400;
     text-transform: uppercase;
+    font-weight: 500;
     font-family: "Vollkorn";
   }
 

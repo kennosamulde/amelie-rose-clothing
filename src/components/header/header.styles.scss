@@ -1,25 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn+SC&display=swap");
+
 .header {
-  height: 100px;
+  height: 90px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   z-index: 3000;
-  padding: 0 5vw;
+  padding: 0 100px;
   background-color: transparent;
-  transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  border-bottom: solid 1px transparent;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 
   &.scrolled {
     background-color: white;
+    border-bottom: solid 1px rgb(216, 216, 216);
   }
 
   .logo {
     font-size: 30px;
     color: rgb(0, 0, 0);
     font-weight: 500;
-    text-transform: uppercase;
-    font-family: "Vollkorn", serif;
+    font-family: "Vollkorn SC", serif;
   }
 
   .logo-container {
@@ -40,8 +43,4 @@
       font-size: 14px;
     }
   }
-}
-
-.fixed {
-  background-color: white;
 }
