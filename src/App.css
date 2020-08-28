@@ -23,3 +23,7 @@ a {
 .App {
   position: relative;
 }
+
+.App > * {
+  padding-top: 150px;
+}
