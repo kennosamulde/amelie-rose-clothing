@@ -1,0 +1,25 @@
+.collection-page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10vh;
+
+  .title {
+    font-size: 20px;
+    margin: 0 auto 40px;
+    font-weight: 500;
+    color: #7c7c7c;
+    font-family: "Vollkorn";
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0 10vw;
+
+    & .collection-item {
+      margin-bottom: 30px;
+      width: auto;
+    }
+  }
+}

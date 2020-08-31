@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  hats: {
     id: 1,
     title: "Hats",
     routeName: "hats",
@@ -60,7 +60,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  sneakers: {
     id: 2,
     title: "Sneakers",
     routeName: "sneakers",
@@ -115,7 +115,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  jackets: {
     id: 3,
     title: "Jackets",
     routeName: "jackets",
@@ -152,7 +152,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  womens: {
     id: 4,
     title: "Womens",
     routeName: "womens",
@@ -190,7 +190,7 @@ const SHOP_DATA = [
       {
         id: 28,
         name: "Yellow Track Suit",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202607F090335_2.jpgg",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202607F090335_2.jpg",
         price: 135,
       },
       {
@@ -201,7 +201,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  mens: {
     id: 5,
     title: "Mens",
     routeName: "mens",
@@ -244,6 +244,62 @@ const SHOP_DATA = [
       },
     ],
   },
-]
+  mouthmasks: {
+    id: 6,
+    title: "Mouth Masks",
+    routeName: "mouthmasks",
+    items: [
+      {
+        id: 36,
+        name: "LEATHER MOUTH MASK - FAKE CROCO",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/f/a/fakecroco_mouthmasks_stape-02_1.jpg",
+        price: 325,
+      },
+      {
+        id: 37,
+        name: "LEATHER MOUTH MASK",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/l/e/leather-mouthmask-stape-02.jpg",
+        price: 20,
+      },
+    ],
+  },
+  jeans: {
+    id: 7,
+    title: "Jeans",
+    routeName: "jeans",
+    items: [
+      {
+        id: 38,
+        name: "SKINNY APE 01",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/h/t/httpshop.saint-ape.com__productimagesatr1780050-skinny-ape-bgwatr1780050-skinny-ape-bgw-front.jpg",
+        price: 325,
+      },
+      {
+        id: 39,
+        name: "BABOON 01 TAPERED",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/a/t/atr17800010-baboon-tapered-front.jpg",
+        price: 20,
+      },
+      {
+        id: 40,
+        name: "SIMIAN 01 STRAIGHT",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/a/t/atr1780003-simian-straight-bbw-front.jpg",
+        price: 20,
+      },
+      {
+        id: 41,
+        name: "GIBBON 01 SKINNY",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/a/t/atr1780002-gibbon-skinnny-sbb-front_1_1.jpg",
+        price: 20,
+      },
+      {
+        id: 42,
+        name: "BONOBO 01 TAPERED",
+        imageUrl: "https://shop.saint-ape.com/pub/media/catalog/product/cache/89ae1204d3ce2c5d6df16e1af1b83a5e/a/t/atr1780001-bonobo-tapered-idg-front.jpg",
+        price: 20,
+      },
+    ],
+  },
+}
 
 export default SHOP_DATA
