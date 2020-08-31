@@ -35,7 +35,7 @@ const Header = ({ currentUser, hidden }) => {
         </Link>
       </div>
       <Link className="logo-container" to="/">
-        <h1 className="logo">Amelie Rose</h1>
+        <h1 className="logo">amelie rose</h1>
       </Link>
       <div className="options">
         {currentUser ? (
