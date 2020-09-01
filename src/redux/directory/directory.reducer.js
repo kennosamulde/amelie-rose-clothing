@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   sections: [
     {
       title: "jackets",
-      imageUrl: "https://shop.saint-ape.com/pub/media/wysiwyg/saint_ape-leather_jackets-mood-1.jpg",
+      imageUrl: "https://shop.saint-ape.com/pub/media/wysiwyg/saint_ape-mood-1.jpg",
       id: 1,
       linkUrl: "shop/jackets",
     },
@@ -33,7 +33,7 @@ const INITIAL_STATE = {
     },
     {
       title: "mens",
-      imageUrl: "https://shop.saint-ape.com/pub/media/wysiwyg/st_ape_brand_men.jpg",
+      imageUrl: "https://shop.saint-ape.com/pub/media/wysiwyg/saint_ape-leather_jackets-mood-1.jpg",
       size: "large",
       id: 6,
       linkUrl: "shop/mens",

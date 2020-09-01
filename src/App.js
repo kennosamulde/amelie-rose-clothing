@@ -9,8 +9,10 @@ import HomePage from "./pages/homepage/homepage.component"
 import ShopPage from "./pages/shop/shop.component"
 import CheckoutPage from "./pages/checkout/checkout.component"
 import SignInAndSignUpPage from "./pages/sign-in-sign-up-page/sign-in-sign-up-page.component"
+import ContactPage from "./pages/contact/contact.component"
 
 import Header from "./components/header/header.component"
+import Footer from "./components/footer/footer.component"
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils"
 import { setCurrentUser } from "./redux/user/user.actions"
@@ -25,7 +27,6 @@ class App extends React.Component {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth)
-
         // we automatically get a snapshot when we run userRef
         userRef.onSnapshot((snapShot) => {
           setCurrentUser({
@@ -51,8 +52,10 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route path="/checkout" component={CheckoutPage} />
+          <Route path="/contact" component={ContactPage} />
           <Route exact path="/signIn" render={() => (this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />)} />
         </Switch>
+        <Footer />
       </div>
     )
   }

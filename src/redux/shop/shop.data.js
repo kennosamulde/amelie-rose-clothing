@@ -160,43 +160,43 @@ const SHOP_DATA = {
       {
         id: 23,
         name: "Blue Tanktop",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202214F069003_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/images/202006F054010_1/kwaidan-editions-ssense-exclusive-blue-velvet-button-down-dress.jpg",
         price: 25,
       },
       {
         id: 24,
         name: "Floral Blouse",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202188F069101_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/images/202373F054011_1/arch-the-ssense-exclusive-grey-cashmere-and-wool-turtleneck-dress.jpg",
         price: 20,
       },
       {
         id: 25,
         name: "Floral Dress",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202370F090009_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/images/202607F088331_1/off-white-green-satin-paperbag-shorts.jpg",
         price: 80,
       },
       {
         id: 26,
         name: "Red Dots Dress",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202553F092229_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202404F122023_1.jpg",
         price: 80,
       },
       {
         id: 27,
         name: "Striped Sweater",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202126F092038_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/images/202404F124025_1/versace-white-baroque-pool-slides.jpg",
         price: 45,
       },
       {
         id: 28,
         name: "Yellow Track Suit",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202607F090335_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/images/202451F005010_1/gucci-gold-and-brown-bold-bridge-aviator-sunglasses.jpg",
         price: 135,
       },
       {
         id: 29,
         name: "White Blouse",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202967F090032_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/images/202253F007009_1/laura-lombardi-gold-rolo-bracelet.jpg",
         price: 20,
       },
     ],
@@ -209,19 +209,19 @@ const SHOP_DATA = {
       {
         id: 30,
         name: "Camo Down Vest",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202161M212121_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202539M163114_1.jpg",
         price: 325,
       },
       {
         id: 31,
         name: "Floral T-shirt",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202168M213029_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202451M165460_1.jpg",
         price: 20,
       },
       {
         id: 32,
         name: "Black & White Longsleeve",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202342M213075_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202387M153244_1.jpg",
         price: 25,
       },
       {
@@ -233,7 +233,7 @@ const SHOP_DATA = {
       {
         id: 34,
         name: "Jean Long Sleeve",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202037M213025_2.jpg",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202399M234042_1.jpgs",
         price: 40,
       },
       {

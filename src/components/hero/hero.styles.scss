@@ -1,0 +1,36 @@
+.hero {
+  height: 60vh;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-family: "Nanum Myeongjo";
+    font-weight: 700;
+
+    span {
+      font-size: 18px;
+
+      font-family: "Vollkorn";
+      font-weight: 400;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+
+    button:first-of-type {
+      margin-right: 10px;
+    }
+  }
+}

@@ -28,9 +28,7 @@ const CheckoutPage = ({ cartItems, total }) => (
         <span>Remove</span>
       </div>
     </div>
-    {cartItems.map((cartItem) => (
-      <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-    ))}
+    {cartItems.length ? cartItems.map((cartItem) => <CheckoutItem key={cartItem.id} cartItem={cartItem} />) : <div className="empty-message">You have no items.</div>}
     <div className="total">TOTAL: ${total}</div>
     <StripeCheckoutButton price={total} />
     <div className="test-warning">

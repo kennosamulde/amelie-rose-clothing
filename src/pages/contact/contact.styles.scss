@@ -1,0 +1,25 @@
+.contact {
+  max-width: 30vw;
+  margin: 0 auto;
+  height: calc(100vh - 60px);
+
+  button {
+    margin-top: 40px;
+  }
+
+  .title {
+    font-family: "Vollkorn";
+    font-weight: 500;
+  }
+
+  span {
+    color: grey;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    font-family: "Poppins";
+  }
+}

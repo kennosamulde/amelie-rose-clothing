@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import "./header.styles.scss"
 import { Link } from "react-router-dom"
 // lets our component have access to reducers/redux
@@ -12,25 +12,13 @@ import { selectCurrentUser } from "../../redux/user/user.selector"
 import { selectCartHidden } from "../../redux/cart/cart.selector"
 
 const Header = ({ currentUser, hidden }) => {
-  const [header, setHeader] = useState(false)
-
-  const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setHeader(true)
-    } else {
-      setHeader(false)
-    }
-  }
-
-  window.addEventListener("scroll", changeBackground)
-
   return (
-    <div className={header ? "header scrolled" : "header"}>
+    <div className="header">
       <div className="options">
         <Link className="option" to="/shop">
           SHOP
         </Link>
-        <Link className="option" to="/shop">
+        <Link className="option" to="/contact">
           CONTACT
         </Link>
       </div>

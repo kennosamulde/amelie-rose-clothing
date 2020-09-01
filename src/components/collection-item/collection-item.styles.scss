@@ -8,7 +8,7 @@
 
   &:hover {
     .image {
-      filter: grayscale(0) contrast(1.3);
+      filter: contrast(1.3);
     }
   }
 
@@ -18,7 +18,7 @@
     background-size: cover;
     background-position: top center;
     margin-bottom: 5px;
-    filter: grayscale(1) contrast(1.2);
+    filter: contrast(1.2);
     transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
