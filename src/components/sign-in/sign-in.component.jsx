@@ -6,12 +6,13 @@ import { auth, signInWithGoogle } from "../../firebase/firebase.utils"
 import Google from "../../assets/google.png"
 
 class SignIn extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     this.state = {
       email: "",
       password: "",
+      error: "",
     }
   }
 
@@ -22,7 +23,8 @@ class SignIn extends React.Component {
       await auth.signInWithEmailAndPassword(email, password)
       this.setState({ email: "", password: "" })
     } catch (err) {
-      console.log(err)
+      this.setState({ error: err.message })
+      console.log(this.state.error)
     }
   }
 
@@ -34,6 +36,12 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="sign-in">
+        {this.state.error && (
+          <div className="error">
+            <h5>{this.state.error}</h5>
+          </div>
+        )}
+
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 

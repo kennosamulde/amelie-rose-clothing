@@ -1,0 +1,7 @@
+export const HeaderActionTypes = {
+  SET_HEADER: "SET_HEADER",
+  IS_MOBILE: "IS_MOBILE",
+  IS_MENU_OPEN: "IS_MENU_OPEN",
+  IS_USER_HIDDEN: "IS_USER_HIDDEN",
+  IS_SEARCH_OPEN: "IS_SEARCH_OPEN",
+}

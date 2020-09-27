@@ -15,6 +15,7 @@ class SignUp extends React.Component {
       email: "",
       password: "",
       confirmPassword: "",
+      error: "",
     }
   }
 
@@ -22,7 +23,7 @@ class SignUp extends React.Component {
     event.preventDefault()
     const { displayName, email, password, confirmPassword } = this.state
     if (password !== confirmPassword) {
-      alert("passwords don't match.")
+      this.setState({ error: "Passwords don't match" })
       return
     }
 
@@ -36,7 +37,7 @@ class SignUp extends React.Component {
         confirmPassword: "",
       })
     } catch (err) {
-      console.error(err)
+      this.setState({ error: err.message })
     }
   }
 
@@ -46,10 +47,15 @@ class SignUp extends React.Component {
   }
 
   render() {
-    const { displayName, email, password, confirmPassword } = this.state
+    const { displayName, email, password, confirmPassword, error } = this.state
 
     return (
       <div className="sign-up">
+        {error && (
+          <div className="error">
+            <h5>{error}</h5>
+          </div>
+        )}
         <h2 className="title">I do not have an account</h2>
         <span>Sign up with your email and password</span>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>

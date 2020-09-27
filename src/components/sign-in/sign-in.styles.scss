@@ -7,6 +7,7 @@
     font-family: "Vollkorn";
     font-weight: 500;
     margin: 10px 0;
+    font-size: 30px;
   }
 
   span {
@@ -16,5 +17,12 @@
   .buttons {
     display: flex;
     justify-content: space-between;
+  }
+
+  .error {
+    h5 {
+      color: red;
+      font-weight: normal;
+    }
   }
 }

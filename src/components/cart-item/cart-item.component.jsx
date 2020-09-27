@@ -1,5 +1,6 @@
 import React from "react"
-import "./cart-item.styles.scss"
+
+import { CartItemContainer, ItemDetails, ItemImage, ItemImageContainer, ItemName } from "./cart-item.styles"
 
 const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
   const limitTitle = (title, limit = 17) => {
@@ -17,18 +18,18 @@ const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
   }
 
   return (
-    <div className="cart-item">
-      <div className="item-image">
-        <img src={imageUrl} alt="item" />
-      </div>
+    <CartItemContainer>
+      <ItemImageContainer>
+        <ItemImage src={imageUrl} alt="item" />
+      </ItemImageContainer>
 
-      <div className="item-details">
-        <span className="name">{limitTitle(name)}</span>
+      <ItemDetails className="item-details">
+        <ItemName className="name">{limitTitle(name)}</ItemName>
         <span className="price">
           {quantity} x ${price}
         </span>
-      </div>
-    </div>
+      </ItemDetails>
+    </CartItemContainer>
   )
 }
 

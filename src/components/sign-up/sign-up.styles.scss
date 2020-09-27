@@ -3,10 +3,18 @@
   display: flex;
   flex-direction: column;
 
+  .error {
+    h5 {
+      font-weight: normal;
+      color: red;
+    }
+  }
+
   h2 {
     font-family: "Vollkorn";
     font-weight: 500;
     margin: 10px 0;
+    font-size: 30px;
   }
 
   span {

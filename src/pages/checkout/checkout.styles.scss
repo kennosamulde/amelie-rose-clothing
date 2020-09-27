@@ -6,12 +6,50 @@
   align-items: center;
   padding: 100px 12vw;
 
+  @media (max-width: 1000px) {
+    padding: 100px 5vw;
+  }
+
   .checkout-header {
     width: 100%;
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #dadada;
+    border-top: 1px solid #dadada;
+
+    &__mobile {
+      display: none;
+      margin-right: auto;
+      margin-bottom: 50px;
+      width: 100%;
+      position: relative;
+      padding-bottom: 10px;
+
+      h4 {
+        font-weight: 400;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        background-color: darkgrey;
+        height: 1px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      display: none;
+
+      &__mobile {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
 
     .header-block {
       text-transform: capitalize;
@@ -34,7 +72,7 @@
     margin: 40px 0;
   }
 
-  button {
+  .StripeCheckout {
     background: black !important;
     padding: 5px 20px !important;
     border-radius: 0 !important;

@@ -10,19 +10,28 @@ import ShopPage from "./pages/shop/shop.component"
 import CheckoutPage from "./pages/checkout/checkout.component"
 import SignInAndSignUpPage from "./pages/sign-in-sign-up-page/sign-in-sign-up-page.component"
 import ContactPage from "./pages/contact/contact.component"
+import Search from "./components/search/search.component"
+import Loader from "./pages/loader/loader.component"
 
 import Header from "./components/header/header.component"
 import Footer from "./components/footer/footer.component"
+import MobileHeader from "./components/mobile-header/mobile-header.component"
+import MenuButton from "./components/menu-button/menu-button.component"
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils"
+import { auth, createUserProfileDocument, firestore, convertCollectionsSnapshotToMap } from "./firebase/firebase.utils"
 import { setCurrentUser } from "./redux/user/user.actions"
 import { selectCurrentUser } from "./redux/user/user.selector"
+import { selectHeaderIsMenuOpen, selectHeaderIsSearchOpen } from "./redux/header/header.selector"
+
+import { updateCollections, toggleIsLoading } from "./redux/shop/shop.actions"
+import { selectLoading } from "./redux/shop/shop.selector"
 
 class App extends React.Component {
   unsubscribeFromAuth = null
+  unsubscribeFromSnapshot = null
 
   componentDidMount() {
-    const { setCurrentUser } = this.props
+    const { setCurrentUser, toggleIsLoading } = this.props
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -38,22 +47,49 @@ class App extends React.Component {
         setCurrentUser(userAuth)
       }
     })
+
+    // get shop
+    const { updateCollections } = this.props
+    const collectionRef = firestore.collection("collections")
+
+    collectionRef.get().then((snapShot) => {
+      const collectionsMap = convertCollectionsSnapshotToMap(snapShot)
+      updateCollections(collectionsMap)
+      toggleIsLoading()
+    })
+
+    // fetch("https://firestore.googleapis.com/v1/projects/crwn-db-dca62/databases/(default)/documents/collections")
+    //   .then((response) => response.json())
+    //   .then((collections) => updateCollections(collections))
+
+    // this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async (snapShot) => {
+    //   const collectionsMap = convertCollectionsSnapshotToMap(snapShot)
+    //   updateCollections(collectionsMap)
+    //   toggleIsLoading()
+    // })
   }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth()
+    this.unsubscribeFromSnapshot()
   }
 
   render() {
+    const { isLoading, currentUser } = this.props
+
     return (
       <div className="App">
-        <Header />
+        <Loader />
+        <MenuButton />
+        <Header isLoading={isLoading} />
+        <MobileHeader />
+        <Search />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={HomePage} isLoading={isLoading} />
           <Route path="/shop" component={ShopPage} />
           <Route path="/checkout" component={CheckoutPage} />
           <Route path="/contact" component={ContactPage} />
-          <Route exact path="/signIn" render={() => (this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />)} />
+          <Route exact path="/signIn" render={() => (currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />)} />
         </Switch>
         <Footer />
       </div>
@@ -63,10 +99,15 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  isMenuOpen: selectHeaderIsMenuOpen,
+  isSearchOpen: selectHeaderIsSearchOpen,
+  isLoading: selectLoading,
 })
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  updateCollections: (collectionsMap) => dispatch(updateCollections(collectionsMap)),
+  toggleIsLoading: () => dispatch(toggleIsLoading()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

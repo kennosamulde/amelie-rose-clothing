@@ -1,22 +1,19 @@
 import React from "react"
-import "./footer.styles.scss"
-import { Link } from "react-router-dom"
+import { FooterContainer, Option, Copyright, Subscribe } from "./footer.styles"
+import CustomButton from "../custom-button/custom-button.component"
 
 const Footer = () => (
-  <div className="footer">
+  <FooterContainer>
     <div className="options">
-      <Link className="option" to="/shop">
-        SHOP
-      </Link>
-      <Link className="option" to="/contact">
-        CONTACT
-      </Link>
-      <Link className="option" to="/signIn">
-        SIGN IN
-      </Link>
+      <Option to="/shop">SHOP</Option>
+      <Option to="/contact">CONTACT</Option>
     </div>
-    <p className="copyright">Copyright © 2020 Amelie Rose. All rights reserved.</p>
-  </div>
+    <Subscribe>
+      <input type="text" placeholder="NAME @EMAIL.COM" />
+      <CustomButton>SUBSCRIBE</CustomButton>
+    </Subscribe>
+    <Copyright>Copyright © 2020 Amelie Rose. All rights reserved.</Copyright>
+  </FooterContainer>
 )
 
 export default Footer

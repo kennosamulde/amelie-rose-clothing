@@ -1,18 +1,27 @@
 import React from "react"
-import "./collection-preview.styles.scss"
+
 import CollectionItem from "../collection-item/collection-item.component"
+import { withRouter } from "react-router-dom"
+import { CollectionPreviewContainer, PreviewHeader, Title, Preview, RightIcon, SeeMore } from "./collection-preview.styles"
 
-const CollectionPreview = ({ title, items }) => (
-  <div className="collection-preview">
-    <h1 className="title">{title}</h1>
-    <div className="preview">
-      {items
-        .filter((item, index) => index < 4)
-        .map((item) => (
-          <CollectionItem key={item.id} item={item} />
-        ))}
-    </div>
-  </div>
-)
+const CollectionPreview = ({ title, items, routeName }) => {
+  return (
+    <CollectionPreviewContainer>
+      <PreviewHeader>
+        <Title>{title}</Title>
+        <SeeMore to={`/shop/${routeName}`}>
+          See more <RightIcon />
+        </SeeMore>
+      </PreviewHeader>
+      <Preview>
+        {items
+          .filter((item, index) => index < 5)
+          .map((item) => (
+            <CollectionItem key={item.id} item={item} routeName={routeName} />
+          ))}
+      </Preview>
+    </CollectionPreviewContainer>
+  )
+}
 
-export default CollectionPreview
+export default withRouter(CollectionPreview)

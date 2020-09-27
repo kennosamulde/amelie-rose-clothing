@@ -4,17 +4,14 @@ import { withRouter } from "react-router-dom"
 import "./hero.styles.scss"
 import CustomButton from "../custom-button/custom-button.component"
 
-const Hero = ({ history }) => (
-  <div className="hero">
+const Hero = ({ history, isLoading }) => (
+  <div className={isLoading ? "hero" : "hero show"}>
     <h1>The Collection</h1>
-    <p>
-      Amelie Rose, a contemporary brand for men and women with an exciting range of luxury leather, denim and ready-to-wear products.
-      <br />
-      <br />
-      <span>Shop now</span>
-    </p>
+    <p className="hero-p">Amelie Rose, a contemporary brand for men and women with an exciting range of luxury leather, denim and ready-to-wear products.</p>
+    <span>Shop now</span>
     <div>
       <CustomButton
+        transparent
         onClick={() => {
           history.push("/shop/mens")
         }}
@@ -22,7 +19,7 @@ const Hero = ({ history }) => (
         men
       </CustomButton>
       <CustomButton
-        inverted
+        transparent
         onClick={() => {
           history.push("/shop/womens")
         }}

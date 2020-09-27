@@ -2,9 +2,14 @@
   width: 22%;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 500px;
   align-items: center;
-  cursor: pointer;
+  margin: 0 30px 50px 30px;
+  flex: 30%;
+
+  @media (max-width: 1280px) {
+    width: 100% !important;
+  }
 
   &:hover {
     .image {
@@ -14,15 +19,26 @@
 
   .image {
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: top center;
+    height: 300px;
+
     margin-bottom: 5px;
     filter: contrast(1.2);
     transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 1280px) {
+      background-position: center;
+    }
   }
 
-  .custom-button {
+  button {
     margin-top: 20px;
     font-size: 12px;
   }

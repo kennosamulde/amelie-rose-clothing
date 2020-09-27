@@ -233,7 +233,7 @@ const SHOP_DATA = {
       {
         id: 34,
         name: "Jean Long Sleeve",
-        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202399M234042_1.jpgs",
+        imageUrl: "https://img.ssensemedia.com/image/upload/b_white/c_scale,h_820/f_auto,dpr_1.0/202399M234042_1.jpg",
         price: 40,
       },
       {
@@ -302,4 +302,4 @@ const SHOP_DATA = {
   },
 }
 
-export default SHOP_DATA
+export const SHOP_DATA

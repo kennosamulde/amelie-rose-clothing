@@ -4,6 +4,7 @@ import { addItemToCart, removeItemFromCart } from "./cart.utils"
 const INITIAL_STATE = {
   hidden: true,
   cartItems: [],
+  paymentSuccess: false,
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -27,6 +28,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload),
+      }
+    case CartActionTypes.PAYMENT_SUCCESS:
+      return {
+        ...state,
+        paymentSuccess: !state.paymentSuccess,
       }
     default:
       return state

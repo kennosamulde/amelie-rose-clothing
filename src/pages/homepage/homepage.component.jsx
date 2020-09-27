@@ -1,13 +1,29 @@
-import React from "react"
-import "./homepage.styles.scss"
+import React, { useEffect } from "react"
+
 import Directory from "../../components/directory/directory.component"
 import Hero from "../../components/hero/hero.component"
 
-const HomePage = () => (
-  <div className="homepage">
-    <Hero />
-    <Directory />
-  </div>
-)
+import { HomePageContainer } from "../homepage/homepage.styles"
 
-export default HomePage
+import { selectLoading } from "../../redux/shop/shop.selector"
+import { connect } from "react-redux"
+import { createStructuredSelector } from "reselect"
+
+const HomePage = ({ isLoading }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  return (
+    <HomePageContainer>
+      <Hero isLoading={isLoading} />
+      <Directory isLoading={isLoading} />
+    </HomePageContainer>
+  )
+}
+
+const mapStateToProps = createStructuredSelector({
+  isLoading: selectLoading,
+})
+
+export default connect(mapStateToProps)(HomePage)
