@@ -6,16 +6,13 @@ import { Link } from "react-router-dom"
 export const CollectionPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 20vw;
-
-  @media (max-width: 1280px) {
-    padding: 0 10vw;
-  }
+  margin-bottom: 5vh;
 `
 export const PreviewHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10vh;
+  margin-bottom: 10px;
+  padding: 0 5px;
 `
 export const RightIcon = styled(RightArrow)`
   margin-left: 10px;

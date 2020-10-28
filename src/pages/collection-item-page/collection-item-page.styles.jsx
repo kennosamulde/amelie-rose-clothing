@@ -4,9 +4,11 @@ export const CollectionItemPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
 `
 export const Navigator = styled.div`
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 
   span {
     margin: 0 10px;
@@ -26,35 +28,34 @@ export const Navigator = styled.div`
 
 export const ProductContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 
-  & > * {
-    margin: 30px;
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
   }
 `
 
 export const ImageContainer = styled.div`
-  max-width: 400px;
-  height: 400px;
+  width: 100%;
 
   img {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    border: solid 1px lightgray;
   }
 `
 
 export const InfoContainer = styled.div`
-  max-width: 400px;
-
-  & > * {
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-top: 70px;
+  margin-bottom: 100px;
 
   p {
-    margin-bottom: 40px;
+    margin: 40px 0;
+    max-width: 500px;
   }
 `

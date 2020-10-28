@@ -6,7 +6,7 @@ export const Overlay = styled.div`
   width: 100%;
   position: fixed;
   z-index: 3000;
-  background: black;
+  background-color: #f3eee8;
   padding: 0;
   display: flex;
   top: 0;
@@ -26,9 +26,13 @@ export const Drawer = styled.div`
   width: 60%;
   background-color: #f0f0f0;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 58px 0 58px;
+  padding: 90px 40px;
+
+  @media (max-width: 500px) {
+    padding: 90px 20px;
+  }
 `
 
 export const OptionsContainer = styled.div`

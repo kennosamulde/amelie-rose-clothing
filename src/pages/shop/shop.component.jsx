@@ -9,7 +9,7 @@ import CollectionPage from "../collection/collection.component"
 import WithSpinner from "../../components/with-spinner/with-spinner.component"
 import CollectionItemPage from "../collection-item-page/collection-item-page.component"
 
-import { selectLoading } from "../../redux/shop/shop.selector"
+import { selectCollectionsFetching } from "../../redux/shop/shop.selector"
 import { connect } from "react-redux"
 import { createStructuredSelector } from "reselect"
 
@@ -32,7 +32,7 @@ const ShopPage = ({ match, isLoading }) => {
 }
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: selectLoading,
+  isLoading: selectCollectionsFetching,
 })
 
 export default connect(mapStateToProps)(ShopPage)

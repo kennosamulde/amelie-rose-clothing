@@ -8,7 +8,7 @@ export const SearchOverlay = styled.div`
   right: 0;
   bottom: 0;
   position: fixed;
-  background-color: white;
+  background-color: #f8f5f0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -88,37 +88,5 @@ export const SearchBody = styled.div`
 export const SearchResultsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-`
-
-export const Result = styled.div`
-  display: flex;
-  margin: 20px;
-  flex: 30%;
-
-  .container {
-    height: 100px;
-    width: 100px;
-
-    margin-right: 20px;
-    display: block;
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .description {
-    align-self: center;
-
-    span {
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 14px;
-    }
-  }
+  justify-content: center;
 `

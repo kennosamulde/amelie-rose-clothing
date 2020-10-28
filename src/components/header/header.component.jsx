@@ -12,6 +12,7 @@ import { createStructuredSelector } from "reselect"
 import { selectCurrentUser } from "../../redux/user/user.selector"
 import { selectCartHidden } from "../../redux/cart/cart.selector"
 import { selectHeaderIsUserHidden } from "../../redux/header/header.selector"
+import { selectLoaderLoading } from "../../redux/loader/loader.selector"
 
 import { toggleIsUserHidden } from "../../redux/header/header.action"
 import { HeaderContainer, LogoContainer, Logo, OptionsContainer, OptionLink, LogIcon } from "./header.styles"
@@ -80,6 +81,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
   isUserHidden: selectHeaderIsUserHidden,
+  isLoading: selectLoaderLoading,
 })
 
 // connects our reducers/state to this component

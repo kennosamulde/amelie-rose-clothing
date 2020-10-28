@@ -9,8 +9,8 @@ export const MenuButtonContainer = styled.button`
   cursor: pointer;
   z-index: 4000;
   position: fixed;
-  top: 20px;
-  left: 58px;
+  top: 22px;
+  left: 40px;
   padding: 0;
   border: none;
   background: none;
@@ -21,6 +21,10 @@ export const MenuButtonContainer = styled.button`
 
   @media (min-width: 795px) {
     display: none;
+  }
+
+  @media (max-width: 500px) {
+    left: 20px;
   }
 
   .menu-bars {

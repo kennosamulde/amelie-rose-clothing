@@ -19,7 +19,7 @@ export const FormGroup = styled.div`
 `
 export const FormInputContainer = styled.input`
   background: none;
-  background-color: white;
+  background-color: #f8f5f0;
   color: $sub-color;
   font-size: 18px;
   padding: 10px 10px 10px 5px;

@@ -8,10 +8,13 @@ export const CartDropDownContainer = styled.div`
   flex-direction: column;
   padding: 20px;
   border: 1px solid black;
-  background-color: white;
+  background-color: #f8f5f0;
   top: 58px;
-  right: 60px;
+  right: 72px;
   z-index: 5;
+  @media (max-width: 500px) {
+    right: 36px;
+  }
 `
 export const CartItemsContainer = styled.div`
   height: 240px;
@@ -47,7 +50,7 @@ export const CartArrow = styled.div`
     width: 100%;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid white;
+    border-bottom: 8px solid #f8f5f0;
     position: absolute;
     right: -8px;
     top: 1px;

@@ -14,20 +14,21 @@ const CollectionItemPage = ({ collection, match, history, dispatch }) => {
 
   return (
     <CollectionItemPageContainer>
-      <Navigator>
-        <Link to="/shop">Shop</Link>
-        <span>/</span>
-        <Link to={`/shop/${routeName}`}>{title}</Link>
-        <span>/</span>
-        <Link to={`${match.url}`}>{name}</Link>
-      </Navigator>
       <ProductContainer>
         <ImageContainer>
           <img src={imageUrl} alt="item" />
         </ImageContainer>
         <InfoContainer>
+          <Navigator>
+            <Link to="/shop">Shop</Link>
+            <span>/</span>
+            <Link to={`/shop/${routeName}`}>{title}</Link>
+            <span>/</span>
+            <Link to={`${match.url}`}>{name}</Link>
+          </Navigator>
+
           <h2>{name}</h2>
-          <h3>${price}</h3>
+          <h3>${price}.00 USD</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident reiciendis, similique maxime quas incidunt natus hic repellat nulla dolorum eius. Et eaque tempora quos nemo! Sunt suscipit reiciendis voluptate veritatis.</p>
           <CustomButton
             onClick={() => {

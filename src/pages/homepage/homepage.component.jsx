@@ -1,13 +1,11 @@
 import React, { useEffect } from "react"
+import { createStructuredSelector } from "reselect"
 
 import Directory from "../../components/directory/directory.component"
 import Hero from "../../components/hero/hero.component"
-
+import { selectLoaderLoading } from "../../redux/loader/loader.selector"
 import { HomePageContainer } from "../homepage/homepage.styles"
-
-import { selectLoading } from "../../redux/shop/shop.selector"
 import { connect } from "react-redux"
-import { createStructuredSelector } from "reselect"
 
 const HomePage = ({ isLoading }) => {
   useEffect(() => {
@@ -23,7 +21,7 @@ const HomePage = ({ isLoading }) => {
 }
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: selectLoading,
+  isLoading: selectLoaderLoading,
 })
 
 export default connect(mapStateToProps)(HomePage)

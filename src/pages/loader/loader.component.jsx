@@ -1,7 +1,7 @@
 import React from "react"
 
 import { LoaderContainer, LoaderContent, Overlay } from "./loader.styles"
-import { selectLoading } from "../../redux/shop/shop.selector"
+import { selectLoaderLoading } from "../../redux/loader/loader.selector"
 import { connect } from "react-redux"
 import { createStructuredSelector } from "reselect"
 
@@ -19,7 +19,7 @@ const Loader = ({ isLoading }) => {
 }
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: selectLoading,
+  isLoading: selectLoaderLoading,
 })
 
 export default connect(mapStateToProps)(Loader)

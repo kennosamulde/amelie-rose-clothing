@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
+import { useImmer } from "use-immer"
 
 import { SearchOverlay, SearchField, SearchResultsContainer, SearchBody } from "./search.styles"
 
@@ -6,21 +7,38 @@ import { selectHeaderIsSearchOpen } from "../../redux/header/header.selector.js"
 import { connect } from "react-redux"
 import { createStructuredSelector } from "reselect"
 import { toggleSearch } from "../../redux/header/header.action"
-
-import { useImmer } from "use-immer"
 import { selectCollections } from "../../redux/shop/shop.selector"
-import { useRef } from "react"
+import { fetchCollectionsAsync } from "../../redux/shop/shop.actions"
 
 import SearchResult from "../search-result/search-result.component"
 
-const Search = ({ isSearchOpen, toggleSearch, collections }) => {
+const Search = ({ isSearchOpen, toggleSearch, collections, fetchcollections }) => {
   const [state, setState] = useImmer({
     searchTerm: "",
     results: [],
-    isLoading: true,
   })
 
   const inputField = useRef(null)
+
+  useEffect(() => {
+    fetchcollections()
+  }, [])
+
+  useEffect(() => {
+    const searchKeyPressHandler = (e) => {
+      if (e.keyCode === 27 && isSearchOpen) {
+        toggleSearch()
+      }
+    }
+
+    document.addEventListener("keyup", searchKeyPressHandler)
+    return () => document.removeEventListener("keyup", searchKeyPressHandler)
+  })
+
+  useEffect(() => {
+    document.body.style.overflow = `${isSearchOpen ? "hidden" : "auto"}`
+    setTimeout(() => inputField.current.focus(), 1000)
+  })
 
   const getItems = (term) => {
     // get all items
@@ -41,34 +59,20 @@ const Search = ({ isSearchOpen, toggleSearch, collections }) => {
     const filteredItems = allItems.filter((item) => {
       return item.name.toLowerCase().includes(term.toLocaleLowerCase())
     })
+
     setState((draft) => {
       draft.results = filteredItems
     })
   }
-
-  useEffect(() => {
-    const searchKeyPressHandler = (e) => {
-      if (e.keyCode === 27 && isSearchOpen) {
-        toggleSearch()
-      }
-    }
-    setTimeout(() => inputField.current.focus(), 1000)
-
-    document.addEventListener("keyup", searchKeyPressHandler)
-    return () => document.removeEventListener("keyup", searchKeyPressHandler)
-  })
 
   const handleInput = (e) => {
     const value = e.target.value
     setState((draft) => {
       draft.searchTerm = value
     })
+
     getItems(state.searchTerm)
   }
-
-  useEffect(() => {
-    document.body.style.overflow = `${isSearchOpen ? "hidden" : "auto"}`
-  })
 
   return (
     <SearchOverlay isSearchOpen={isSearchOpen}>
@@ -96,6 +100,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
   toggleSearch: () => dispatch(toggleSearch()),
+  fetchcollections: () => dispatch(fetchCollectionsAsync()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

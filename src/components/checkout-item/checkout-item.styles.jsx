@@ -11,9 +11,13 @@ export const CheckoutItemContainer = styled.div`
 
   @media (max-width: 1000px) {
     display: grid;
-    grid-template-columns: 1fr 1fr min-content;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr)) min-content;
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 30px;
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: min-content minmax(min-content, 1fr) min-content;
   }
 
   span {
@@ -34,12 +38,20 @@ export const ImageContainer = styled.div`
   @media (max-width: 1000px) {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    width: 100%;
+    width: 200px;
+    height: 100%;
+    align-self: flex-start;
 
     img {
       width: 100% !important;
+      height: 100%;
       object-fit: cover;
     }
+  }
+
+  @media (max-width: 500px) {
+    width: 100px;
+    height: 100%;
   }
 
   img {

@@ -10,8 +10,10 @@ const MenuItem = ({ title, imageUrl, size, linkUrl, match, history }) => (
     </div>
     <div className="content">
       <h1 className="title">{title}</h1>
-      <p>Modern life has become a bombardment of toxins. From the chemicals in our foods and the ones we pump into the atmosphere, to the stress of our busy lives. That's why, as Dr. Simone Laubscher PhD puts it "our bodies have to work overtime, all the time."</p>
-      <CustomButton transparent>SHOP NOW</CustomButton>
+      <p>
+        Coveted classics from our premiere collection, <br></br>La Dolce Vita, have returned at a stellar price.
+      </p>
+      <CustomButton inverted>SHOP NOW</CustomButton>
     </div>
   </div>
 )

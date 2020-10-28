@@ -17,6 +17,6 @@ export const ItemCount = styled.span`
   bottom: 12px;
 `
 export const ShopIcon = styled(ShoppingIcon)`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 `

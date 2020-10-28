@@ -6,13 +6,19 @@ import { connect } from "react-redux"
 import { toggleIsMenuOpen } from "../../redux/header/header.action"
 import { selectHeaderIsMenuOpen } from "../../redux/header/header.selector"
 import { createStructuredSelector } from "reselect"
-import NavImage from "../../assets/st_ape_brand_women.jpg"
+import NavImage from "../../assets/680_le_riviera_pink_002.jpg"
 
 const MobileHeader = ({ isMenuOpen, toggleIsMenuOpen }) => {
   return (
     <Overlay isMenuOpen={isMenuOpen}>
       <Drawer>
         <OptionsContainer isMenuOpen={isMenuOpen}>
+          <OptionLink to="/shop/women" onClick={() => toggleIsMenuOpen()}>
+            WOMEN
+          </OptionLink>
+          <OptionLink to="/shop/men" onClick={() => toggleIsMenuOpen()}>
+            MEN
+          </OptionLink>
           <OptionLink to="/shop" onClick={() => toggleIsMenuOpen()}>
             SHOP
           </OptionLink>

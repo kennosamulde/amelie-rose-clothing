@@ -13,7 +13,7 @@ const buttonStyles = css`
 `
 
 const invertedStyles = css`
-  background-color: white;
+  background-color: #f8f5f0;
   color: black;
   border: 1px solid rgb(218, 218, 218);
 

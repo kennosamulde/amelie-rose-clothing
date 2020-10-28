@@ -19,6 +19,7 @@ body {
   height: 100%;
   scrollbar-color: #dddddd transparent;
   scrollbar-width: thin;
+  background-color: #f8f5f0;
 }
 
 body::-webkit-scrollbar-track {
@@ -38,13 +39,9 @@ a {
   text-decoration: none;
 }
 
-.App {
+.App-Main {
   position: relative;
   height: 100%;
-}
-
-.App > * {
-  padding-top: 100px;
 }
 
 /* Change autocomplete styles in WebKit */

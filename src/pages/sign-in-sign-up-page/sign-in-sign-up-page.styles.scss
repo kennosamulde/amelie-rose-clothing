@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   min-height: 100vh;
+  padding-top: 120px;
 
   @media (max-width: 795px) {
     flex-direction: column;

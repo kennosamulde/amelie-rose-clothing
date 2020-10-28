@@ -15,7 +15,7 @@ const CollectionPreview = ({ title, items, routeName }) => {
       </PreviewHeader>
       <Preview>
         {items
-          .filter((item, index) => index < 5)
+          .filter((item, index) => index < 4)
           .map((item) => (
             <CollectionItem key={item.id} item={item} routeName={routeName} />
           ))}

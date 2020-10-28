@@ -13,16 +13,16 @@ export const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
-  padding: 0px 28px;
+  padding: 0px 40px;
   transition: background cubic-bezier(0.075, 0.82, 0.165, 1) 0.01s, box-shadow cubic-bezier(0.075, 0.82, 0.165, 1) 0.01s, transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 3.8s, opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 3.8s;
-  background: ${({ header }) => (header ? "white" : "transparent")};
+  background: #f8f5f0;
   box-shadow: ${({ header }) => (header ? "10px 10px 40px 0px rgba(0, 0, 0, 0.10)" : "none")};
 
   opacity: ${({ isLoading }) => (isLoading ? 0 : 1)};
   transform: translateY(${({ isLoading }) => (isLoading ? "-20px" : 0)});
 
-  @media (max-width: 795px) {
-    background: white;
+  @media (max-width: 500px) {
+    padding: 0px 20px;
   }
 `
 
@@ -38,7 +38,6 @@ export const LogoContainer = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 0px 10px 10px;
   }
 `
 export const Logo = styled.h1`
@@ -60,12 +59,11 @@ export const OptionsContainer = styled.div`
   &:nth-of-type(2) {
     justify-self: flex-end;
 
-    & > * {
+    & > :not(:last-child) {
       margin-right: 30px;
-    }
-
-    & > :last-child {
-      margin-right: 0;
+      @media (max-width: 500px) {
+        margin-right: 15px;
+      }
     }
   }
 `
@@ -73,6 +71,7 @@ export const OptionLink = styled(Link)`
   &:not(:last-child) {
     margin-right: 40px;
   }
+
   color: rgb(0, 0, 0);
   cursor: pointer;
   font-size: 14px;
@@ -88,8 +87,7 @@ export const OptionLink = styled(Link)`
 `
 
 export const LogIcon = styled(UserIcon)`
-  width: 20px;
-  height: 20px;
-
+  width: 18px;
+  height: 18px;
   cursor: pointer;
 `
