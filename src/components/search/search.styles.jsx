@@ -59,7 +59,6 @@ export const SearchField = styled.div`
 `
 
 export const SearchBody = styled.div`
-  padding: 30px;
   width: 100%;
   height: 100%;
   overflow: auto;

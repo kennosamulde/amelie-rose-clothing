@@ -3,6 +3,7 @@ import emailjs from "emailjs-com"
 import "./contact.styles.scss"
 import FormInput from "../../components/form-input/form-input.component"
 import CustomButton from "../../components/custom-button/custom-button.component"
+import Background from "../../assets/1740_les_creoles_carrees_green_023.jpg"
 
 class ContactPage extends React.Component {
   constructor() {
@@ -43,15 +44,20 @@ class ContactPage extends React.Component {
 
     return (
       <div className="contact">
-        <h2 className="title">Get in touch</h2>
-        <span>We'd love to hear from you, Say Hi</span>
-        <form className="contact-form" onSubmit={this.handleSubmit}>
-          <FormInput type="text" name="name" value={name} onChange={this.handleChange} label="Name" required />
-          <FormInput type="email" name="email" value={email} onChange={this.handleChange} label="Email" required />
-          <FormInput type="number" name="number" value={number} onChange={this.handleChange} label="Phone Number" required />
-          <textarea rows="7" cols="50" name="message" value={message} onChange={this.handleChange} placeholder="Message..." />
-          <CustomButton type="submit">SEND</CustomButton>
-        </form>
+        <div className="contact-content">
+          <h2 className="title">Get in touch</h2>
+          <span>We'd love to hear from you, Say Hi</span>
+          <form className="contact-form" onSubmit={this.handleSubmit}>
+            <FormInput type="text" name="name" value={name} onChange={this.handleChange} label="Name" required />
+            <FormInput type="email" name="email" value={email} onChange={this.handleChange} label="Email" required />
+            <FormInput type="number" name="number" value={number} onChange={this.handleChange} label="Phone Number" required />
+            <textarea rows="7" cols="50" name="message" value={message} onChange={this.handleChange} placeholder="Message..." />
+            <CustomButton type="submit">SEND</CustomButton>
+          </form>
+        </div>
+        <div className="contact-bg">
+          <img src={Background} alt="" />
+        </div>
       </div>
     )
   }
