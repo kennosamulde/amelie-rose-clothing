@@ -6,7 +6,7 @@ const buttonStyles = css`
   border: solid 1px transparent;
 
   &:hover {
-    background-color: white;
+    background-color: #f8f5f0;
     color: black;
     border: 1px solid black;
   }
@@ -20,7 +20,7 @@ const invertedStyles = css`
   &:hover {
     background-color: black;
     color: white;
-    border: 1px solid black;
+    border: 1px solid #f8f5f0;
   }
 `
 

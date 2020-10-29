@@ -1,18 +1,18 @@
 const INITIAL_STATE = {
   sections: [
     {
-      title: "womens",
+      title: "women",
       imageUrl: "https://mcprod.jacquemus.com/media/staempfli_imageresizer/cache/catalog/product/1/7/2040x_co_ar_tr_95/1750_les_creoles_carrees_beige_002_1.jpg",
       size: "medium",
       id: 1,
-      linkUrl: "shop/womens",
+      linkUrl: "shop/women",
     },
     {
-      title: "mens",
+      title: "men",
       imageUrl: "https://mcprod.jacquemus.com/media/staempfli_imageresizer/cache/catalog/product/x/x/1695x1137_co_ar_tr_95/xxx_le_collier_gourmette_gold_005.jpg",
       size: "medium",
       id: 2,
-      linkUrl: "shop/mens",
+      linkUrl: "shop/men",
     },
     {
       title: "accessories",

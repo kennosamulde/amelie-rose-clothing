@@ -17,22 +17,8 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   height: 100%;
-  scrollbar-color: #dddddd transparent;
   scrollbar-width: thin;
   background-color: #f8f5f0;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #eeecec;
-}
-
-body::-webkit-scrollbar {
-  width: 6px;
-  background-color: #f8f8f8;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: lightgrey;
 }
 
 a {

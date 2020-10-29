@@ -20,6 +20,9 @@ const CollectionItem = ({ item, addItem, history, match, routeName }) => {
     <div className="collection-item">
       <div className="image" onClick={() => history.push(`${match.url}${addRoute()}/${id}`)}>
         <img src={imageUrl} alt="" />
+        <div className="circle">
+          <span>view</span>
+        </div>
       </div>
       <div className="collection-footer">
         <span className="name">{name}</span>
